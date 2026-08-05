@@ -7,12 +7,13 @@
   <title>Rafaau Studio | Departamento de Marketing Promocional</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
   <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
   <script src="https://cdn.tailwindcss.com"></script>
-  <script>tailwind.config={theme:{extend:{colors:{brand:'#E53935',ink:'#111114'},fontFamily:{sans:['Inter','sans-serif']}}}}</script>
+  <script>tailwind.config={theme:{extend:{colors:{brand:'#ff4d20',ink:'#123c36'},fontFamily:{sans:['Inter','sans-serif']}}}}</script>
   <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="redesign.css" />
 </head>
 <body class="bg-white text-ink antialiased">
   <div id="loader"><span class="loader-mark">R.</span></div>
@@ -43,10 +44,11 @@
         </div>
         <div class="relative mx-auto w-full max-w-xl" data-aos="zoom-in" data-aos-delay="150">
           <div class="hero-orbit orbit-one"></div><div class="hero-orbit orbit-two"></div>
-          <div class="hero-mockup">
-            <div class="mockup-top"><span class="mockup-dots"><i></i><i></i><i></i></span><span>Campanha da semana</span></div>
-            <div class="mockup-cover"><span>OFERTAS<br/><b>IMPERDÍVEIS</b></span><small>Válidas até domingo</small><div class="mockup-product">R$<strong>9,99</strong></div></div>
-            <div class="mockup-bottom"><div class="mini-post red"></div><div class="mini-post"></div><div class="mini-post dark"></div></div>
+          <div class="delivery-stamp"><strong>48H</strong><span>campanha<br>entregue</span></div>
+          <div class="hero-phone">
+            <div class="phone-bar"><span>9:41</span><i></i><b>● ● ●</b></div>
+            <div class="campaign-visual"><img src="images/campanha-hero.png" alt="Campanha promocional de supermercado com carnes, frutas e produtos" /><div class="campaign-copy"><small>OFERTAS DA SEMANA</small><strong>É preço baixo<br>de verdade.</strong></div><div class="retail-price"><span>R$</span><b>9</b><sup>99</sup></div></div>
+            <div class="social-actions"><span>♡</span><span>◯</span><span>⌁</span><small>rafaau.studio</small></div>
           </div>
           <div class="floating-card card-instagram"><i class="fa-brands fa-instagram"></i><span>Feed & Stories<br/><b>Prontos para postar</b></span></div>
           <div class="floating-card card-whatsapp"><i class="fa-brands fa-whatsapp"></i><span>WhatsApp<br/><b>Material entregue</b></span></div>
@@ -70,7 +72,7 @@
 
     <section id="portfolio" class="bg-ink py-24 text-white"><div class="section-shell"><div class="flex flex-col justify-between gap-7 sm:flex-row sm:items-end" data-aos="fade-up"><div><span class="eyebrow eyebrow-dark">Portfólio selecionado</span><h2 class="mt-5 text-4xl font-extrabold tracking-[-.055em] sm:text-5xl">Campanhas completas que se destacam.</h2><p class="mt-5 max-w-xl leading-7 text-zinc-400">Cada campanha reúne a comunicação que seu supermercado precisa para vender mais, em todos os canais.</p></div><div class="portfolio-filters"><button class="active" data-filter="all">Todas</button><button data-filter="semanal">Semanais</button><button data-filter="sazonal">Sazonais</button><button data-filter="varejo">Varejo</button></div></div><div class="portfolio-grid mt-12" id="portfolio-grid"></div></div></section>
 
-    <section class="section-shell"><div class="section-heading" data-aos="fade-up"><span class="eyebrow">Evolução visual</span><h2>Do encarte comum ao encarte profissional.</h2><p>Arraste para comparar o cuidado que faz sua oferta ganhar destaque.</p></div><div class="compare-box mt-12" data-aos="zoom-in"><div class="compare-after"><div class="compare-content pro"><small>OFERTAS DA SEMANA</small><h3>Preço que chama atenção.</h3><strong>R$ 8,99</strong></div></div><div class="compare-before" id="compare-before"><div class="compare-content common"><small>OFERTAS</small><h3>Preço baixo</h3><strong>8,99</strong></div></div><input id="compare-slider" type="range" min="0" max="100" value="52" aria-label="Comparar encartes" /><div class="compare-handle" id="compare-handle"><i class="fa-solid fa-left-right"></i></div><span class="compare-label before-label">ANTES</span><span class="compare-label after-label">DEPOIS</span></div></section>
+    <section class="evolution-section"><div class="section-shell"><div class="evolution-head" data-aos="fade-up"><div class="section-heading"><span class="eyebrow">Evolução visual</span><h2>Do encarte comum ao encarte profissional.</h2><p>Arraste para comparar o cuidado que faz sua oferta ganhar destaque.</p></div><div class="carousel-controls"><button id="compare-prev" aria-label="Comparação anterior">←</button><span><b id="compare-current">01</b> / 04</span><button id="compare-next" aria-label="Próxima comparação">→</button></div></div><div class="compare-box mt-12" data-aos="zoom-in"><div class="compare-after" id="compare-after"><div class="compare-photo"></div><div class="compare-content pro"><small id="after-kicker">FESTIVAL DA CARNE</small><h3 id="after-title">Preço que chama atenção.</h3><div class="retail-price compare-price"><span>R$</span><b>8</b><sup>99</sup></div></div></div><div class="compare-before" id="compare-before"><div class="compare-content common"><small>OFERTAS</small><h3>Preço baixo</h3><strong id="before-price">8,99</strong></div></div><input id="compare-slider" type="range" min="0" max="100" value="52" aria-label="Comparar encartes" /><div class="compare-handle" id="compare-handle"><i class="fa-solid fa-left-right"></i></div><span class="compare-label before-label">ANTES</span><span class="compare-label after-label">DEPOIS</span></div><div class="compare-dots" id="compare-dots"></div></div></section>
 
     <section id="processo" class="bg-[#f5f5f5] py-24"><div class="section-shell"><div class="section-heading" data-aos="fade-up"><span class="eyebrow">Como funciona</span><h2>Simples para você. Completo para a sua loja.</h2><p>Uma linha de produção clara para que nenhuma campanha promocional fique para trás.</p></div><div class="timeline mt-14"><article data-aos="fade-up"><span>01</span><h3>Você envia as ofertas</h3><p>Centralize produtos, preços e validade em um briefing prático.</p></article><article data-aos="fade-up" data-aos-delay="100"><span>02</span><h3>Produzimos toda a campanha</h3><p>Organizamos a comunicação promocional para todos os canais.</p></article><article data-aos="fade-up" data-aos-delay="200"><span>03</span><h3>Você aprova</h3><p>Alinhamos os detalhes com sua operação.</p></article><article data-aos="fade-up" data-aos-delay="300"><span>04</span><h3>Recebe tudo pronto</h3><p>Encarte, Feed, Stories, WhatsApp e PDF organizados para uso.</p></article></div></div></section>
 
@@ -82,6 +84,7 @@
   </main>
   <footer class="bg-[#09090b] text-zinc-400"><div class="mx-auto grid max-w-7xl gap-8 px-5 py-14 lg:grid-cols-2 lg:px-8"><div><a class="text-2xl font-extrabold tracking-[-.08em] text-white" href="#inicio">rafaau<span class="text-brand">.</span></a><p class="mt-4 max-w-sm text-sm leading-6">Departamento de Marketing Promocional para Supermercados, com agilidade, organização e atendimento contínuo.</p></div><div class="flex flex-wrap gap-x-8 gap-y-4 text-sm"><a href="#">Instagram</a><a href="https://wa.me/5500000000000">WhatsApp</a><a href="mailto:contato@rafaau.studio">contato@rafaau.studio</a><span>CNPJ: 00.000.000/0001-00</span></div></div><div class="border-t border-white/10 px-5 py-6 text-center text-xs">© <span id="year"></span> Rafaau Studio. Todos os direitos reservados.</div></footer>
   <div id="portfolio-modal" class="modal" aria-hidden="true"><button class="modal-close" aria-label="Fechar">×</button><div class="modal-art" id="modal-art"></div><div class="modal-info"><span id="modal-category"></span><h3 id="modal-title"></h3><p>Campanha completa: encarte, Feed, Stories, WhatsApp e Banner. Substitua este placeholder pelo registro real da campanha.</p></div></div>
+  <a class="whatsapp-float" href="https://wa.me/5500000000000" target="_blank" rel="noopener" aria-label="Falar pelo WhatsApp"><i class="fa-brands fa-whatsapp"></i><span>Vamos conversar</span></a>
   <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script><script src="script.js"></script>
 </body>
 </html>
